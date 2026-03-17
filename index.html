@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lay Lab - Premium Home Decor</title>
+    <meta name="description" content="Discover our curated collection of minimal and premium decor pieces.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header (Logo, Search, Icons) -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="#home" class="logo">
+                <img src="assets/logo.png" alt="Lay Lab Logo">
+            </a>
+            
+            <!-- Global Search -->
+            <div class="header-search">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search products by name or ID...">
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            
+            <!-- Utility Icons -->
+            <div class="header-icons">
+                <a href="#" class="icon-btn" aria-label="Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <a href="#" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navigation Bar (Categories & Global Links) -->
+    <nav class="category-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#collection">Shop <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <!-- Dropdown could be populated by JS later, keeping simple for now -->
+                </li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#portfolio">Our Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-up">From Plan to Perfection</h1>
+            <p class="fade-up delay-1">Premium Wall Frames • Unique Art Pieces • Floral Decor</p>
+            <p class="fade-up delay-1" style="font-style: italic; font-family: var(--font-serif); margin-bottom: 3rem;">"We connect, curate, arrange & shine"</p>
+            <a href="#collection" class="btn fade-up delay-2">View Catalog</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div class="about-content fade-up" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+            <h2>About Us</h2>
+            <p style="text-align: center;">Laylab Decors is a curated home decor brand offering aesthetically crafted pieces for modern living. Our goal is to create products that feel luxurious, purposeful, and effortlessly stylish in any space.</p>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection-section">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <h2 class="fade-up">Shop By Categories</h2>
+        </div>
+        
+        <!-- Category Overview Grid (Shows 12 main categories) -->
+        <div class="category-grid fade-up delay-2" id="categoryGrid">
+            <!-- Injected by JS -->
+        </div>
+        
+        <!-- Detailed Product Catalog Divider -->
+        <div id="catalogDivider" style="display: none; border-top: 2px solid #EEE; padding-top: 4rem; margin-top: 2rem;">
+             <h2 class="fade-up" style="text-align: center; color: var(--text-color); margin-bottom: 3rem;">All Products</h2>
+        </div>
+        
+        <div class="catalog-grid" id="catalogGrid">
+            <!-- Product cards will be injected here via JS -->
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-header">
+            <h2 class="fade-up">Completed Projects</h2>
+            <p class="fade-up delay-1">A curated look at our bespoke installations and finished pieces in their final spaces.</p>
+        </div>
+        
+        <div class="portfolio-grid fade-up delay-2" id="portfolioGrid">
+            <!-- Image gallery will be injected here via JS -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-form-side fade-up">
+                <h2>Get in Touch</h2>
+                <p>Have a bespoke request or a question about our collection? We'd love to connect.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message or Inquiry..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-side fade-up delay-1">
+                <h3>Contact Information</h3>
+                <div class="info-block">
+                    <h4>Studio Address</h4>
+                    <p>PJ98+23X Mudavantheri<br>Kerala, India</p>
+                </div>
+                <div class="info-block">
+                    <h4>Direct Line</h4>
+                    <p><a href="tel:+919037010474" style="color: var(--text-color); text-decoration: none;">+91 90370 10474</a></p>
+                </div>
+                <div class="info-block">
+                    <h4>Email</h4>
+                    <p><a href="mailto:laylabdecor@gmail.com" style="color: var(--text-color); text-decoration: none;">laylabdecor@gmail.com</a></p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3906.672180319569!2d75.6126520750559!3d11.717614988494265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQzJzAzLjQiTiA3NcKwMzYnNTQuOCJF!5e0!3m2!1sen!2sin!4v1773736940988!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#home" class="footer-logo">
+                <img src="assets/logo.png" alt="Lay Lab Logo">
+            </a>
+            <p>&copy; 2026 Lay Lab. Connect, Curate, Arrange & Shine.</p>
+            <a href="https://www.instagram.com/laylab.in" target="_blank" style="color: var(--text-color); text-decoration: none; margin-top: 1rem; display: inline-block;">Instagram: @laylab.in</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
