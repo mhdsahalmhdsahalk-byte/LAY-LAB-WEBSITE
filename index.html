@@ -61,15 +61,35 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="fade-up">From Plan to Perfection</h1>
-            <p class="fade-up delay-1">Premium Wall Frames • Unique Art Pieces • Floral Decor</p>
-            <p class="fade-up delay-1" style="font-style: italic; font-family: var(--font-serif); margin-bottom: 3rem;">"We connect, curate, arrange & shine"</p>
-            <a href="#collection" class="btn fade-up delay-2">View Catalog</a>
+    <!-- Hero Section (Slider) -->
+    <section id="home" class="hero-slider">
+        <div class="slides-container">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&q=80');">
+                <div class="hero-content">
+                    <h1 class="fade-up">From Plan to Perfection</h1>
+                    <p class="fade-up delay-1">Premium Wall Frames • Unique Art Pieces • Floral Decor</p>
+                    <p class="fade-up delay-1" style="font-style: italic; font-family: var(--font-serif); margin-bottom: 3rem; color: #fff;">"We connect, curate, arrange & shine"</p>
+                    <a href="#collection" class="btn fade-up delay-2">View Catalog</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80');">
+                <div class="hero-content">
+                    <h1 class="fade-up">Bespoke Craftsmanship</h1>
+                    <p class="fade-up delay-1">Every piece crafted to elevate your living spaces.</p>
+                    <a href="#collection" class="btn fade-up delay-2">Shop Now</a>
+                </div>
+            </div>
         </div>
-    </header>
+        
+        <!-- Slider Controls -->
+        <button class="slider-btn prev-btn" aria-label="Previous slide">&#10094;</button>
+        <button class="slider-btn next-btn" aria-label="Next slide">&#10095;</button>
+        
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about-section" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
@@ -98,6 +118,13 @@
         <div class="catalog-grid" id="catalogGrid">
             <!-- Product cards will be injected here via JS -->
         </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner fade-up" style="background-color: #F4F1ED; padding: 4rem 5%; text-align: center; margin: 4rem 5%; border-radius: 8px; border: 1px solid #EAEAEA;">
+        <h2 style="font-family: var(--font-primary); font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary-color);">Free Shipping on Orders Over ₹5000</h2>
+        <p style="font-family: var(--font-secondary); color: #555; max-width: 600px; margin: 0 auto 2.5rem;">Elevate your space with our premium decor collection without worrying about delivery fees. Limited time offer.</p>
+        <a href="#collection" class="btn" style="background-color: var(--primary-color); color: white;">Shop Now</a>
     </section>
 
     <!-- Portfolio Section -->
@@ -157,14 +184,47 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <a href="#home" class="footer-logo">
-                <img src="assets/logo.png" alt="Lay Lab Logo">
-            </a>
-            <p>&copy; 2026 Lay Lab. Connect, Curate, Arrange & Shine.</p>
-            <a href="https://www.instagram.com/laylab.in" target="_blank" style="color: var(--text-color); text-decoration: none; margin-top: 1rem; display: inline-block;">Instagram: @laylab.in</a>
+    <!-- Footer (E-commerce Style) -->
+    <footer class="main-footer">
+        <div class="footer-grid fade-up">
+            <div class="footer-col">
+                <img src="assets/logo.png" alt="Lay Lab Logo" class="footer-logo">
+                <p>Laylab Decors is a curated home decor brand offering aesthetically crafted pieces for modern living.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/laylab.in" target="_blank" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">PI</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#collection">Wall Frames</a></li>
+                    <li><a href="#collection">Artificial Flowers</a></li>
+                    <li><a href="#collection">Resin Arts</a></li>
+                    <li><a href="#collection">Clocks</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: info@laylab.in</li>
+                    <li>Phone: +91 90370 10474</li>
+                    <li>Location: Kerala, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laylab Decors. All Rights Reserved.</p>
         </div>
     </footer>
 
