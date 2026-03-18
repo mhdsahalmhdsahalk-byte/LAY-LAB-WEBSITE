@@ -330,4 +330,36 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, 100);
+
+    // EmailJS Contact Form Logic
+    // IMPORTANT: Replace these with your actual IDs from EmailJS dashboard
+    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(() => {
+                    submitBtn.textContent = 'Message Sent!';
+                    this.reset();
+                    setTimeout(() => submitBtn.textContent = originalText, 3000);
+                }, (error) => {
+                    alert('Failed to send message. Make sure your EmailJS keys are added in script.js.');
+                    submitBtn.textContent = originalText;
+                });
+        });
+    }
+
 });
