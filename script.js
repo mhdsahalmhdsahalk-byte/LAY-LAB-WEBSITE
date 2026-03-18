@@ -6,6 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const catalogDivider = document.getElementById('catalogDivider');
     const searchInput = document.getElementById('searchInput');
 
+    // Modal Elements
+    const productModal = document.getElementById('productModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalColors = document.getElementById('modalColors');
+    const modalWaBtn = document.getElementById('modalWaBtn');
+
+    // Phone Number for WhatsApp orders
+    const WA_NUMBER = "919037010474";
+
     // State
     let searchQuery = '';
 
@@ -190,7 +204,57 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
             
+            // Add click event to open Modal
+            card.addEventListener('click', () => openProductModal(product));
+            
             grid.appendChild(card);
+        });
+    }
+
+    // Modal Logic
+    function openProductModal(product) {
+        if (!productModal) return;
+        
+        modalImage.src = product.image;
+        modalImage.alt = product.name;
+        modalCategory.textContent = product.category;
+        modalTitle.textContent = product.name;
+        modalPrice.textContent = product.price;
+        modalDesc.textContent = product.description;
+        
+        // Colors
+        modalColors.innerHTML = '';
+        product.colors.forEach(color => {
+            const tag = document.createElement('span');
+            tag.className = 'color-tag';
+            tag.textContent = color;
+            modalColors.appendChild(tag);
+        });
+        
+        // WhatsApp Link formulation
+        const message = 'Hi, I want this product (' + product.id + ') - ' + product.name;
+        const waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(message);
+        modalWaBtn.href = waUrl;
+        
+        productModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent scrolling behind modal
+    }
+    
+    // Close Modal
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            productModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
+    // Close on outside click
+    if (productModal) {
+        productModal.addEventListener('click', (e) => {
+            if (e.target === productModal) {
+                productModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 
