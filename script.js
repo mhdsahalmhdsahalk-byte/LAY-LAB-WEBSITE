@@ -111,15 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderAllProducts();
 
-    // 6. Contact Form EmailJS
-    const EMAILJS_PUBLIC_KEY = "maFV8byy4oafFi6Jv";
-    const EMAILJS_SERVICE_ID = "service_fkcdjj2";
-    const EMAILJS_TEMPLATE_ID = "template_f8l8yxa";
-
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-    }
-
+    // 6. Contact Form Google Form Submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
@@ -129,16 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             
-            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-                .then(() => {
-                    submitBtn.textContent = 'Message Sent!';
-                    this.reset();
-                    setTimeout(() => submitBtn.textContent = originalText, 3000);
-                }, (error) => {
-                    console.error('EmailJS Error:', error);
-                    alert('Failed to send message. Error: ' + (error.text || error.message || JSON.stringify(error)));
-                    submitBtn.textContent = originalText;
-                });
+            const formData = new FormData(this);
+            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdTnPeOzbNtNfsQqQLBFPHxXFLkhatRJpazkBCc5AniWGcAfQ/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(() => {
+                submitBtn.textContent = 'Message Sent!';
+                this.reset();
+                setTimeout(() => submitBtn.textContent = originalText, 3000);
+            }).catch(error => {
+                console.error('Error:', error);
+                submitBtn.textContent = 'Failed to Send';
+                setTimeout(() => submitBtn.textContent = originalText, 3000);
+            });
         });
     }
 });
