@@ -73,7 +73,18 @@ a { text-decoration: none; color: inherit; }
 .mobile-link { font-size: 2rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* --- 2. Hero Section --- */
-.hero { height: 90vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-bg-light); text-align: center; padding: 0 5%; }
+.hero { 
+    height: 90vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: var(--color-bg-light); 
+    background-image: linear-gradient(rgba(249, 248, 246, 0.7), rgba(249, 248, 246, 0.7)), url('assets/banner.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center; 
+    padding: 0 5%; 
+}
 .hero-content { max-width: 800px; }
 .hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
 .hero-content p { font-size: 1.25rem; font-weight: 300; color: var(--color-text-muted); margin-bottom: 3rem; }
