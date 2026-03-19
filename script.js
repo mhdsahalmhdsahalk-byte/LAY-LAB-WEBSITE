@@ -356,7 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     this.reset();
                     setTimeout(() => submitBtn.textContent = originalText, 3000);
                 }, (error) => {
-                    alert('Failed to send message. Make sure your EmailJS keys are added in script.js.');
+                    console.error('EmailJS Error:', error);
+                    alert('Failed to send message. Error: ' + (error.text || error.message || JSON.stringify(error)));
                     submitBtn.textContent = originalText;
                 });
         });
