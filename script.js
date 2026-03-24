@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         categoriesList.forEach(cat => {
             const card = document.createElement('a');
-            card.href = "#all-products"; // Scrolling down to products simply
+            card.href = "#all-products"; 
             card.className = 'category-card';
             card.innerHTML = `
                 <div class="category-icon">
@@ -134,23 +134,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <h3>${cat.name}</h3>
             `;
+            
+            card.addEventListener('click', () => {
+                renderFilteredProducts(cat.name);
+            });
+            
             categoryGrid.appendChild(card);
         });
     }
 
-    // 5. Render All Products
-    function renderAllProducts() {
+    // 5. Render Products (Filtered)
+    function renderFilteredProducts(categoryName) {
         const allProductsGrid = document.getElementById('allProductsGrid');
+        const sectionTitle = document.querySelector('#all-products .section-title h2');
+        const sectionDesc = document.querySelector('#all-products .section-title p');
+        
         if (!allProductsGrid) return;
+        allProductsGrid.innerHTML = ''; // clear current grid
+        
+        let filtered = products;
+        if (categoryName) {
+            filtered = products.filter(p => p.category === categoryName);
+            if(sectionTitle) sectionTitle.textContent = categoryName;
+            if(sectionDesc) sectionDesc.textContent = `Showing beautiful pieces in ${categoryName}.`;
+        } else {
+            if(sectionTitle) sectionTitle.textContent = "All Products";
+            if(sectionDesc) sectionDesc.textContent = "Browse our entire catalog of premium bespoke pieces.";
+        }
 
-        products.forEach(prod => {
+        filtered.forEach(prod => {
             allProductsGrid.appendChild(createProductCard(prod));
         });
     }
 
+    // Reset filter when clicking normal "Products" nav links
+    document.querySelectorAll('a[href="#all-products"]:not(.category-card)').forEach(link => {
+        link.addEventListener('click', () => renderFilteredProducts(null));
+    });
+
     renderFeatured();
     renderCategories();
-    renderAllProducts();
+    renderFilteredProducts(null);
 
     // 6. Contact Form Google Form Submission
     const contactForm = document.getElementById('contact-form');
