@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lay Lab - Interactive Decor Physics</title>
+    <!-- Matter.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="physics.css">
+</head>
+<body>
+    
+    <!-- Background Decor (Gradient Blobs) for premium glassmorphism pop -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <div class="instruction">
+        Drag and throw elements to interact
+    </div>
+
+    <!-- Container for strictly tracked DOM elements -->
+    <div id="physics-container">
+        
+        <!-- Typography Blocks -->
+        <h1 class="physics-el heading" data-restitution="0.6">Premium Home Decor</h1>
+        <div class="physics-el brand" data-restitution="0.4">LAY LAB.</div>
+        <a href="index.html" class="physics-el pill btn-return" data-restitution="0.5">Return to Shop ⤶</a>
+        
+        <!-- Image Cards (Products) -->
+        <div class="physics-el card" data-restitution="0.3">
+            <div class="card-inner">
+                <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&q=80&w=800" alt="Resin Art">
+                <div class="card-title">Clear Resin Frame</div>
+            </div>
+        </div>
+        
+        <div class="physics-el card" data-restitution="0.3">
+            <div class="card-inner">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="Minimal Clock">
+                <div class="card-title">Nordic Minimal Clock</div>
+            </div>
+        </div>
+
+        <div class="physics-el card" data-restitution="0.3">
+            <div class="card-inner">
+                <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&q=80&w=800" alt="Wall Decor">
+                <div class="card-title">Abstract Wall Decor</div>
+            </div>
+        </div>
+
+        <div class="physics-el card" data-restitution="0.3">
+            <div class="card-inner">
+                <img src="assets/banner.png" onerror="this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800'" alt="Banner Art">
+                <div class="card-title">The Masterpiece</div>
+            </div>
+        </div>
+
+        <!-- Geometric Shape (Minimalism aesthetic) -->
+        <div class="physics-el circle-shape" data-type="circle" data-restitution="0.8"></div>
+
+    </div>
+
+    <script src="physics.js"></script>
+</body>
+</html>
