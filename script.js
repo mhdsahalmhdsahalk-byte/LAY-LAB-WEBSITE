@@ -20,6 +20,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Phone Number for WhatsApp
     const WA_NUMBER = "919037010474";
 
+    // Hero Slider Logic
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval;
+
+        const showSlide = (index) => {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            
+            currentSlide = (index + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        };
+
+        const nextSlide = () => showSlide(currentSlide + 1);
+        const prevSlide = () => showSlide(currentSlide - 1);
+
+        const resetInterval = () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+        };
+
+        nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+        prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                showSlide(parseInt(e.target.dataset.index));
+                resetInterval();
+            });
+        });
+
+        resetInterval();
+    }
+
     // Utility: Create Product Card HTML
     function createProductCard(product) {
         const card = document.createElement('div');
