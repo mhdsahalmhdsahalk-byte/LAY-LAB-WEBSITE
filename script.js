@@ -1,13 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Nav
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    mobileMenuBtn.addEventListener('click', () => mobileNav.classList.add('active'));
-    closeMenuBtn.addEventListener('click', () => mobileNav.classList.remove('active'));
-    mobileLinks.forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('active')));
+    if (mobileMenuBtn && mobileNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    if (closeMenuBtn && mobileNav) {
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    mobileLinks.forEach(link => link.addEventListener('click', () => {
+        if(mobileNav) mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+    }));
 
     // 2. Data Categories
     const categoriesList = [
