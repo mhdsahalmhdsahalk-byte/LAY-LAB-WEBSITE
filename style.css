@@ -185,37 +185,45 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Responsiveness --- */
 @media (max-width: 900px) {
-    h1 { font-size: 3rem; }
-    h2 { font-size: 1.8rem; }
-    .category-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-content { flex-direction: column; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.6rem; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .footer-content { flex-direction: column; gap: 1.5rem; }
 }
 
 @media (max-width: 768px) {
     .nav-menu { display: none; }
     .mobile-menu-btn { display: block; font-size: 1.5rem; }
     
-    /* Product grid adjusts to 2 columns on tablets/phones */
-    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0.8rem; }
-    .card { height: 320px; } /* Slightly shorter cards on mobile */
-    .card-title { font-size: 0.8rem; }
+    /* Highly compact product grid */
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem 0.5rem; }
+    .product-name { font-size: 0.9rem; }
+    .product-price { font-size: 0.9rem; }
+    .product-cat { font-size: 0.7rem; margin-bottom: 0.5rem; }
+    .product-order-btn { padding: 0.6rem; font-size: 0.75rem; }
+    .fav-btn { width: 32px; height: 32px; font-size: 0.8rem; }
     
-    .section { padding: 4rem 0; }
+    /* Tighter Sections */
+    .section { padding: 2.5rem 0; }
+    .section-title { margin-bottom: 1.5rem; }
+    .section-title h2 { font-size: 1.4rem; }
     
-    /* Properly size the hero slider since it has no text contents to prop it open */
-    .hero { height: 60vh; padding: 0; }
-    .slider-controls { bottom: 20px; }
+    /* Compact Hero Slider */
+    .hero { height: 45vh; padding: 0; }
+    .slider-controls { bottom: 15px; }
     
-    /* Make input form take full width */
+    /* Compact Category layout */
+    .category-icon { padding: 15%; margin-bottom: 0.5rem; }
+    .category-card h3 { font-size: 0.9rem; }
+    
     .contact-container { padding: 0 1rem; }
-    
-    .footer { padding: 3rem 0 2rem; }
+    .footer { padding: 2rem 0 1rem; }
 }
 
 @media (max-width: 480px) {
-    /* If screen is extremely narrow, stack cards to 1 column or keep 2 narrow ones */
-    /* Let's stay with 2 columns but drop heights */
-    .card { height: 260px; }
-    .card-title { font-size: 0.75rem; padding-top: 4px; }
-    .category-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .product-grid { gap: 0.8rem 0.4rem; }
+    .product-name, .product-price { font-size: 0.8rem; }
+    .hero { height: 35vh; }
+    .category-grid { grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+    .category-card h3 { font-size: 0.65rem; }
 }
