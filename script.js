@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Data Categories
     const categoriesList = [
-        { name: "Frames", image: products.find(p => p.category === "Frames")?.image || "" },
-        { name: "Resin Arts", image: products.find(p => p.category === "Resin Arts")?.image || "" },
-        { name: "Wall Clocks", image: "assets/categories/wall clock single side.png" },
-        { name: "Artificial Flowers & Leafs", image: "assets/categories/flowor and leaf.png" }
+        { name: "Frames", subcats: ["Wall Frames", "Calligraphy Frames", "Arabic Calligraphy", "Texture Frames"], image: "" },
+        { name: "Artificial Plants", subcats: ["Artificial Flowers", "Artificial Leafs", "Potted Plants"], image: "" },
+        { name: "Wall Decor", subcats: ["Metal Arts", "Resin Arts", "Wall Clocks", "Wall Furnitures"], image: "" },
+        { name: "Vases", subcats: ["Ceramic Vases", "Glass Vases"], image: "" },
+        { name: "Table & Living Decor", subcats: ["Table Mats", "Under Table Rugs", "Soap Dispensers", "Crockery Decor Sets"], image: "" },
+        { name: "Mirrors", subcats: ["Customised Mirrors"], image: "" }
     ];
 
     const WA_NUMBER = "919037010474";
@@ -91,11 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('a');
             card.href = "#all-products"; 
             card.className = 'category-card';
+            
+            const subcatText = cat.subcats.join(', ');
+            
             card.innerHTML = `
-                <div class="category-icon">
-                    <img src="${cat.image}" alt="${cat.name}">
+                <div class="category-icon" style="background: #EFEFEF; border: 1px dashed #DDD;">
+                    ${cat.image ? `<img src="${cat.image}" alt="${cat.name}">` : `<span style="font-size:1.5rem; color:#AAA; font-weight:200;">[ Image ]</span>`}
                 </div>
                 <h3>${cat.name}</h3>
+                <p class="subcat-text">${subcatText}</p>
             `;
             card.addEventListener('click', () => renderFilteredProducts(cat.name));
             categoryGrid.appendChild(card);
