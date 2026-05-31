@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'product-card group bg-darkcard border border-white/5 hover:border-gold/20 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.04)] flex flex-col justify-between';
         
-        const message = `Hello LayLab, I would like to order the product: *${product.name}* (${product.price})\n[ID: ${product.id}]`;
+        const message = `Hello LayLab, I would like to order the product: *${product.name}*\n[ID: ${product.id}]`;
         const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
         card.innerHTML = `
@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="text-left">
                     <h3 class="font-poppins text-white text-base font-light tracking-wide mb-1">${product.name}</h3>
-                    <span class="font-outfit text-sm text-gold tracking-wide font-normal">${product.price}</span>
                 </div>
             </div>
             <a href="${waLink}" target="_blank" class="mt-6 w-full text-center bg-white border border-white text-black font-outfit text-xs font-semibold py-3.5 uppercase tracking-wider rounded-full hover:bg-transparent hover:text-white transition-all duration-500 block">
