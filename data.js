@@ -22,10 +22,10 @@ const products = [
     },
     {
         id: "LL004",
-        name: "Bespoke Cured Mirror",
-        category: "Mirrors",
+        name: "Modern Wall Clock",
+        category: "Wall Decor",
         price: "₹14,500",
-        image: "assets/categories/Customised Mirrors.png"
+        image: "assets/categories/IMG_4656.PNG"
     },
     {
         id: "LL005",
