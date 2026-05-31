@@ -24,36 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const WA_NUMBER = "919037010474";
 
-    // 2. Hero Slider Logic
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    if (slides.length > 0) {
-        let currentSlide = 0;
-        let slideInterval;
-        const showSlide = (index) => {
-            slides.forEach(s => s.classList.remove('active'));
-            dots.forEach(d => d.classList.remove('active'));
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        };
-        const nextSlide = () => showSlide(currentSlide + 1);
-        const prevSlide = () => showSlide(currentSlide - 1);
-        const resetInterval = () => {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        };
-        if(nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
-        if(prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-        dots.forEach(dot => dot.addEventListener('click', (e) => {
-            showSlide(parseInt(e.target.dataset.index));
-            resetInterval();
-        }));
-        resetInterval();
-    }
+
 
     // 3. Create Apple-Style Product Card
     function createProductCard(product) {
