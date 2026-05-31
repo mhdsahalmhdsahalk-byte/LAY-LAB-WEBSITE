@@ -8,10 +8,10 @@ const products = [
     },
     {
         id: "LL002",
-        name: "Berry Dahlia",
-        category: "Artificial Plants",
+        name: "Candelabra Floor Lamp",
+        category: "Lighting",
         price: "₹9,200",
-        image: "assets/images/Berry_Dahliya.png"
+        image: "assets/categories/IMG_4781.PNG"
     },
     {
         id: "LL003",
