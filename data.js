@@ -1,10 +1,10 @@
 const products = [
     {
         id: "LL001",
-        name: "Classic Rose",
+        name: "Artificial Flowers",
         category: "Artificial Plants",
         price: "₹8,500",
-        image: "assets/images/Classic_Rose.png"
+        image: "assets/categories/IMG_4708.PNG"
     },
     {
         id: "LL002",
