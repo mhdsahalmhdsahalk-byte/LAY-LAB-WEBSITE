@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${product.image}" loading="lazy" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <div class="text-left">
-                    <h3 class="font-cinzel text-white text-base font-light tracking-wide mb-1">${product.name}</h3>
+                    <h3 class="font-poppins text-white text-base font-light tracking-wide mb-1">${product.name}</h3>
                     <span class="font-outfit text-sm text-gold tracking-wide font-normal">${product.price}</span>
                 </div>
             </div>

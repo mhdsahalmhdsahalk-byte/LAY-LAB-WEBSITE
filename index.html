@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LAY LAB | Premium Home Decor</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -17,7 +17,7 @@
                         darkcard: '#0F0F11',
                     },
                     fontFamily: {
-                        cinzel: ['Cinzel', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
                         outfit: ['Outfit', 'sans-serif'],
                     }
                 }
@@ -31,7 +31,7 @@
 
     <!-- Preloader Loading Animation -->
     <div id="preloader" class="fixed inset-0 bg-black z-[999] flex flex-col items-center justify-center transition-all duration-[800ms] ease-out">
-        <div class="font-cinzel text-gold text-3xl font-medium tracking-[0.3em] animate-pulse mb-6">LAY LAB.</div>
+        <div class="font-poppins text-gold text-3xl font-medium tracking-[0.3em] animate-pulse mb-6">LAY LAB.</div>
         <div class="w-16 h-[2px] bg-gold/30 relative overflow-hidden rounded-full">
             <div class="absolute h-full w-8 bg-gold animate-[loading_1.5s_infinite_ease-in-out]"></div>
         </div>
@@ -40,7 +40,7 @@
     <!-- 1. Minimal Header -->
     <header class="header fixed top-0 w-full z-50 transition-all duration-500 bg-black/85 backdrop-blur-md border-b border-white/5 py-4">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="#" class="font-cinzel text-white text-lg tracking-[0.2em] font-medium transition-colors hover:text-gold">LAY LAB.</a>
+            <a href="#" class="font-poppins text-white text-lg tracking-[0.2em] font-medium transition-colors hover:text-gold">LAY LAB.</a>
             <nav class="hidden md:flex gap-8 items-center">
                 <a href="#hero" class="font-outfit text-xs text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Home</a>
                 <a href="#why-laylab" class="font-outfit text-xs text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Why Laylab</a>
@@ -57,12 +57,12 @@
     <div id="mobileNav" class="mobile-nav fixed inset-0 bg-black z-[100] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-500 -translate-y-6">
         <button class="close-menu-btn absolute top-6 right-6 text-white text-4xl font-light focus:outline-none">×</button>
         <div class="mobile-links flex flex-col gap-8 text-center">
-            <a href="#hero" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Home</a>
-            <a href="#why-laylab" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Why Laylab</a>
-            <a href="#featured-products" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Products</a>
-            <a href="#instagram-preview" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Instagram</a>
-            <a href="#testimonials" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Reviews</a>
-            <a href="#whatsapp-cta" class="mobile-link font-cinzel text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Contact</a>
+            <a href="#hero" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Home</a>
+            <a href="#why-laylab" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Why Laylab</a>
+            <a href="#featured-products" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Products</a>
+            <a href="#instagram-preview" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Instagram</a>
+            <a href="#testimonials" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Reviews</a>
+            <a href="#whatsapp-cta" class="mobile-link font-poppins text-xl text-neutral-400 uppercase tracking-widest hover:text-white transition-colors">Contact</a>
         </div>
     </div>
 
@@ -75,7 +75,7 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center z-10">
             <!-- Left Info Block -->
             <div class="flex flex-col items-start text-left">
-                <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide leading-tight mb-6">
+                <h1 class="font-poppins text-4xl sm:text-5xl lg:text-6xl text-white font-light tracking-wide leading-tight mb-6">
                     Frames That<br><span class="text-gold">Hold Emotions.</span>
                 </h1>
                 <p class="font-outfit text-base md:text-lg text-neutral-400 font-light max-w-lg mb-10 leading-relaxed">
@@ -95,8 +95,8 @@
                 <div class="relative w-full max-w-[450px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-darkcard group transition-all duration-700 hover:border-gold/20 hover:shadow-[0_0_40px_rgba(212,175,55,0.1)]">
                     <img src="assets/hero_signature.png" alt="Signature Framed Art Piece" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105" loading="eager">
                     <div class="absolute bottom-6 left-6 right-6 p-6 rounded-xl bg-black/60 backdrop-blur-md border border-white/5">
-                        <span class="font-cinzel text-xs text-gold tracking-widest uppercase mb-1 block">Signature Masterpiece</span>
-                        <h3 class="font-cinzel text-white text-base font-light tracking-wide">The Emperor Oak Abstract</h3>
+                        <span class="font-poppins text-xs text-gold tracking-widest uppercase mb-1 block">Signature Masterpiece</span>
+                        <h3 class="font-poppins text-white text-base font-light tracking-wide">The Emperor Oak Abstract</h3>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
     <section id="why-laylab" class="section py-24 bg-neutral-950/80 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16 flex flex-col items-center">
-                <h2 class="font-cinzel text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Why Laylab</h2>
+                <h2 class="font-poppins text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Why Laylab</h2>
                 <div class="w-12 h-[1px] bg-gold my-6"></div>
                 <p class="font-outfit text-neutral-400 max-w-xl font-light text-sm md:text-base leading-relaxed">
                     Designed for those who appreciate the details. We curate premium home decor items that bring balance, textures, and bespoke artistry into your space.
@@ -116,24 +116,24 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="why-card bg-darkcard border border-white/5 hover:border-gold/20 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.03)]">
-                    <div class="font-cinzel text-3xl font-light text-gold mb-6">01</div>
-                    <h3 class="font-cinzel text-white text-lg font-normal mb-3 tracking-wide">Artisanal Integrity</h3>
+                    <div class="font-poppins text-3xl font-light text-gold mb-6">01</div>
+                    <h3 class="font-poppins text-white text-lg font-normal mb-3 tracking-wide">Artisanal Integrity</h3>
                     <p class="font-outfit text-neutral-400 text-sm font-light leading-relaxed">
                         Every piece in our collection is hand-selected, prioritizing high-quality materials, rich textures, and exceptional craftsmanship.
                     </p>
                 </div>
                 <!-- Card 2 -->
                 <div class="why-card bg-darkcard border border-white/5 hover:border-gold/20 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.03)]">
-                    <div class="font-cinzel text-3xl font-light text-gold mb-6">02</div>
-                    <h3 class="font-cinzel text-white text-lg font-normal mb-3 tracking-wide">Bespoke Curation</h3>
+                    <div class="font-poppins text-3xl font-light text-gold mb-6">02</div>
+                    <h3 class="font-poppins text-white text-lg font-normal mb-3 tracking-wide">Bespoke Curation</h3>
                     <p class="font-outfit text-neutral-400 text-sm font-light leading-relaxed">
                         We source items tailored to your specific design preferences, helping you build a cohesive visual narrative across your home.
                     </p>
                 </div>
                 <!-- Card 3 -->
                 <div class="why-card bg-darkcard border border-white/5 hover:border-gold/20 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.03)]">
-                    <div class="font-cinzel text-3xl font-light text-gold mb-6">03</div>
-                    <h3 class="font-cinzel text-white text-lg font-normal mb-3 tracking-wide">Concierge Consultation</h3>
+                    <div class="font-poppins text-3xl font-light text-gold mb-6">03</div>
+                    <h3 class="font-poppins text-white text-lg font-normal mb-3 tracking-wide">Concierge Consultation</h3>
                     <p class="font-outfit text-neutral-400 text-sm font-light leading-relaxed">
                         Connect with our consultants directly via WhatsApp to discuss customized sizes, framing options, and matching decor sets.
                     </p>
@@ -146,7 +146,7 @@
     <section id="featured-products" class="section py-24 bg-black">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16 flex flex-col items-center">
-                <h2 class="font-cinzel text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Featured Products</h2>
+                <h2 class="font-poppins text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Featured Products</h2>
                 <div class="w-12 h-[1px] bg-gold my-6"></div>
                 <p class="font-outfit text-neutral-400 max-w-xl font-light text-sm md:text-base leading-relaxed">
                     A curated selection of our finest decor items. Click any piece to inquire about custom styling.
@@ -163,7 +163,7 @@
     <section id="instagram-preview" class="section py-24 bg-neutral-950/80 border-t border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16 flex flex-col items-center">
-                <h2 class="font-cinzel text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Instagram Preview</h2>
+                <h2 class="font-poppins text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Instagram Preview</h2>
                 <div class="w-12 h-[1px] bg-gold my-6"></div>
                 <p class="font-outfit text-neutral-400 max-w-xl font-light text-sm md:text-base leading-relaxed">
                     Witness our pieces styled in living spaces. Follow us on Instagram for daily inspiration.
@@ -223,7 +223,7 @@
             <!-- Instagram DM CTA Banner -->
             <div class="mt-12 p-8 rounded-2xl bg-darkcard border border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 hover:border-gold/20 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(212,175,55,0.02)]">
                 <div class="text-left w-full sm:w-auto">
-                    <h3 class="font-cinzel text-white text-lg font-light mb-1">Styled by Laylab</h3>
+                    <h3 class="font-poppins text-white text-lg font-light mb-1">Styled by Laylab</h3>
                     <p class="font-outfit text-xs text-neutral-400">Share your installations using our tag #LayLabHome</p>
                 </div>
                 <a href="#" class="px-8 py-3.5 bg-transparent border border-white text-white font-outfit text-xs font-semibold uppercase tracking-wider rounded-full hover:bg-white hover:text-black transition-all duration-500 whitespace-nowrap w-full sm:w-auto text-center">
@@ -237,7 +237,7 @@
     <section id="testimonials" class="section py-24 bg-black border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16 flex flex-col items-center">
-                <h2 class="font-cinzel text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Testimonials</h2>
+                <h2 class="font-poppins text-3xl md:text-4xl text-white tracking-widest uppercase font-light">Testimonials</h2>
                 <div class="w-12 h-[1px] bg-gold my-6"></div>
                 <p class="font-outfit text-neutral-400 max-w-xl font-light text-sm md:text-base leading-relaxed">
                     Hear from our clients who have elevated their spaces with our customized collections.
@@ -254,7 +254,7 @@
                     </div>
                     <div>
                         <div class="w-8 h-[1px] bg-neutral-800 my-4"></div>
-                        <h4 class="font-cinzel text-white text-sm tracking-wide">Aishwarya R.</h4>
+                        <h4 class="font-poppins text-white text-sm tracking-wide">Aishwarya R.</h4>
                         <span class="font-outfit text-[10px] text-gold uppercase tracking-wider">Vase & Frame Client</span>
                     </div>
                 </div>
@@ -268,7 +268,7 @@
                     </div>
                     <div>
                         <div class="w-8 h-[1px] bg-neutral-800 my-4"></div>
-                        <h4 class="font-cinzel text-white text-sm tracking-wide">Vikram S.</h4>
+                        <h4 class="font-poppins text-white text-sm tracking-wide">Vikram S.</h4>
                         <span class="font-outfit text-[10px] text-gold uppercase tracking-wider">Interior Designer</span>
                     </div>
                 </div>
@@ -282,7 +282,7 @@
                     </div>
                     <div>
                         <div class="w-8 h-[1px] bg-neutral-800 my-4"></div>
-                        <h4 class="font-cinzel text-white text-sm tracking-wide">Meera K.</h4>
+                        <h4 class="font-poppins text-white text-sm tracking-wide">Meera K.</h4>
                         <span class="font-outfit text-[10px] text-gold uppercase tracking-wider">Homeowner</span>
                     </div>
                 </div>
@@ -294,7 +294,7 @@
     <section id="whatsapp-cta" class="section py-24 bg-neutral-950/80">
         <div class="max-w-4xl mx-auto px-6 md:px-12">
             <div class="bg-darkcard border border-white/5 hover:border-gold/20 rounded-3xl p-12 md:p-16 text-center transition-all duration-700 hover:shadow-[0_15px_40px_rgba(212,175,55,0.03)]">
-                <h2 class="font-cinzel text-3xl md:text-4xl text-white tracking-widest uppercase font-light mb-6">Commission a Piece</h2>
+                <h2 class="font-poppins text-3xl md:text-4xl text-white tracking-widest uppercase font-light mb-6">Commission a Piece</h2>
                 <p class="font-outfit text-neutral-400 text-base md:text-lg font-light max-w-xl mx-auto mb-10 leading-relaxed">
                     Collaborate directly with our design concierge to source custom sizes, colors, and framed sets. Let's make your space unforgettable.
                 </p>
@@ -309,18 +309,18 @@
     <footer class="footer py-16 border-t border-white/5 bg-black">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-12">
             <div class="text-left">
-                <h3 class="font-cinzel text-white text-xl tracking-[0.25em] font-light mb-2">LAY LAB.</h3>
+                <h3 class="font-poppins text-white text-xl tracking-[0.25em] font-light mb-2">LAY LAB.</h3>
                 <p class="font-outfit text-xs text-neutral-500 font-light">Minimal. Premium. Bespoke.</p>
             </div>
             <div class="flex flex-col gap-3 text-left">
-                <h4 class="font-cinzel text-xs text-white uppercase tracking-widest font-normal mb-2">Explore</h4>
+                <h4 class="font-poppins text-xs text-white uppercase tracking-widest font-normal mb-2">Explore</h4>
                 <a href="#hero" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">Home</a>
                 <a href="#why-laylab" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">Why Laylab</a>
                 <a href="#featured-products" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">Featured Products</a>
                 <a href="physics.html" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">Interactive Physics</a>
             </div>
             <div class="flex flex-col gap-3 text-left">
-                <h4 class="font-cinzel text-xs text-white uppercase tracking-widest font-normal mb-2">Socials</h4>
+                <h4 class="font-poppins text-xs text-white uppercase tracking-widest font-normal mb-2">Socials</h4>
                 <a href="https://wa.me/919037010474" target="_blank" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">WhatsApp</a>
                 <a href="#" class="font-outfit text-xs text-neutral-500 hover:text-white transition-colors">Instagram</a>
             </div>
