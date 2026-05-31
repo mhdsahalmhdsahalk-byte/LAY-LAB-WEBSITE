@@ -1,446 +1,52 @@
-/* --- Reset & Variables --- */
-:root {
-    --color-bg: #000000;
-    --color-bg-light: #070708; /* Luxury deep dark grey */
-    --color-card: #0F0F11;     /* Charcoal black card container */
-    --color-text: #FFFFFF;
-    --color-text-muted: #8E8E93;
-    --color-border: rgba(255, 255, 255, 0.08);
-    --font-primary: 'Montserrat', sans-serif;
-    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* --- Custom Keyframes & Animations --- */
+@keyframes loading {
+    0% { left: -50%; }
+    50% { left: 100%; }
+    100% { left: -50%; }
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    font-family: var(--font-primary);
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    line-height: 1.6;
-    overflow-x: hidden;
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
 }
 
-/* --- Typography & Utilities --- */
-h1, h2, h3 { font-weight: 300; letter-spacing: -0.02em; }
-a { text-decoration: none; color: inherit; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-.bg-light { background-color: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-.section { padding: 10rem 0; }
-.section-title { margin-bottom: 5rem; display: flex; justify-content: space-between; align-items: flex-end; }
-.section-title h2 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 300; }
-.centered-title { flex-direction: column; align-items: center; text-align: center; }
-.centered-title p { margin-top: 1.5rem; color: var(--color-text-muted); max-width: 600px; font-weight: 300; font-size: 1rem; }
-
-/* Buttons */
-.btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 1.1rem 3rem; font-size: 0.8rem; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.15em;
-    cursor: pointer; border: 1px solid var(--color-text);
-    background: transparent; color: var(--color-text);
-    border-radius: 100px; transition: var(--transition);
-}
-.btn-hero {
-    background: #FFFFFF; color: #000000; border-color: #FFFFFF;
-}
-.btn-hero:hover {
-    background: transparent; color: #FFFFFF;
-}
-.btn-whatsapp-cta {
-    background: transparent; color: var(--color-text); border-color: var(--color-text);
-}
-.btn-whatsapp-cta:hover {
-    background: #25D366; color: white; border-color: #25D366;
+.animate-pulse {
+    animation: pulse 4s infinite ease-in-out;
 }
 
-/* --- 1. Header --- */
-.header { position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; border-bottom: 1px solid var(--color-border); }
-.header-container { max-width: 1400px; margin: 0 auto; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.25rem; font-weight: 500; letter-spacing: 0.25em; }
-.nav-menu { display: flex; gap: 2.5rem; }
-.nav-menu a { font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; transition: var(--transition); color: var(--color-text-muted); }
-.nav-menu a:hover { color: var(--color-text); }
-.mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; color: var(--color-text); }
-
-/* Mobile Nav Overlay */
-.mobile-nav { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--color-bg); z-index: 200; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: var(--transition); transform: translateY(-20px); }
-.mobile-nav.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.close-menu-btn { position: absolute; top: 2rem; right: 2rem; background: none; border: none; font-size: 3rem; font-weight: 200; cursor: pointer; color: var(--color-text); }
-.mobile-links { display: flex; flex-direction: column; gap: 2.5rem; text-align: center; }
-.mobile-link { font-size: 1.5rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.15em; }
-
-/* --- 2. Hero Section --- */
-.hero { 
-    height: 90vh; 
-    position: relative; 
-    overflow: hidden; 
-    background: radial-gradient(circle at center, #111113 0%, #000000 100%); 
-    border-bottom: 1px solid var(--color-border); 
-}
-.hero-content-overlay {
-    width: 100%;
-    height: 100%;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-}
-.hero-title {
-    font-size: 5rem; 
-    font-weight: 200; 
-    letter-spacing: 0.15em; 
-    margin-bottom: 1.5rem; 
-    line-height: 1.1;
-    color: #FFFFFF;
-}
-.hero-subtitle {
-    font-size: 1.25rem; 
-    font-weight: 300; 
-    color: var(--color-text-muted); 
-    max-width: 600px; 
-    margin: 0 auto 3rem;
-    letter-spacing: 0.05em;
-}
-
-/* --- 3. Why Laylab Section --- */
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
-.why-card {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 3.5rem 2.5rem;
-    transition: var(--transition);
-}
-.why-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-.why-num {
-    font-size: 2.5rem;
-    font-weight: 200;
-    color: #D4AF37; /* Elegant gold accent */
-    margin-bottom: 2rem;
-    font-family: serif; /* Stylized index number */
-}
-.why-card h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.02em;
-}
-.why-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-/* --- 4. Featured Products Section (Apple-Style) --- */
-.featured-products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3.5rem 2rem;
-}
-.product-card {
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    transition: var(--transition);
-    position: relative;
-    border-radius: 20px;
+/* --- Preloader --- */
+body.preloader-active {
     overflow: hidden;
 }
-.product-image-container {
-    width: 100%;
-    aspect-ratio: 3/4;
-    overflow: hidden;
-    border-radius: 16px;
-    background: #0E0E10;
-    border: 1px solid var(--color-border);
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-.product-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.product-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 0.5rem;
-}
-.product-name {
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--color-text);
-    margin-bottom: 0.4rem;
-}
-.product-price {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    font-weight: 400;
-    margin-bottom: 1.2rem;
-}
-.btn-add-to-cart {
-    width: 100%;
-    text-align: center;
-    background: #FFFFFF;
-    color: #000000;
-    padding: 0.8rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: var(--transition);
-    border: 1px solid #FFFFFF;
-}
-.btn-add-to-cart:hover {
-    background: transparent;
-    color: #FFFFFF;
-}
-.product-card:hover .product-image-container img {
-    transform: scale(1.04);
-}
-.product-card:hover .product-image-container {
-    border-color: rgba(255, 255, 255, 0.15);
+
+/* --- Header Scroll Effect --- */
+header.header.scrolled {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-/* --- 5. Instagram Preview Section --- */
-.insta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-.insta-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    aspect-ratio: 1;
-    border: 1px solid var(--color-border);
-}
-.insta-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.insta-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-.insta-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-.insta-text {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-}
-.insta-item:hover img {
-    transform: scale(1.05);
-}
-.insta-item:hover .insta-overlay {
+/* --- Mobile Nav Overlay --- */
+.mobile-nav.active {
     opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
-/* --- 6. WhatsApp CTA Section --- */
-.whatsapp-container {
-    max-width: 900px;
+/* --- Scroll Fade-in --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.whatsapp-card {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    border-radius: 24px;
-    padding: 6rem 3rem;
-    text-align: center;
-}
-.whatsapp-card h2 {
-    font-size: 2.2rem;
-    letter-spacing: 0.1em;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
-.whatsapp-card p {
-    color: var(--color-text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 3rem;
-    font-weight: 300;
-    line-height: 1.7;
-}
-.btn-whatsapp-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.1rem 3.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    border: 1px solid #FFFFFF;
-    background: #FFFFFF;
-    color: #000000;
-    border-radius: 100px;
-    transition: var(--transition);
-}
-.btn-whatsapp-cta:hover {
-    background: transparent;
-    color: #FFFFFF;
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* --- 7. Footer --- */
-.footer {
-    padding: 6rem 0 3rem;
-    border-top: 1px solid var(--color-border);
-    background: #000;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 5rem;
-    flex-wrap: wrap;
-    gap: 3rem;
-}
-.footer-brand h3 {
-    font-size: 1.6rem;
-    letter-spacing: 0.25em;
-    margin-bottom: 1rem;
-    font-weight: 300;
-}
-.footer-brand p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    font-weight: 300;
-}
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.footer-links a {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-    transition: var(--transition);
-}
-.footer-links a:hover {
-    color: var(--color-text);
-}
-.footer-socials {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.footer-socials a {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-    transition: var(--transition);
-}
-.footer-socials a:hover {
-    color: var(--color-text);
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
-    font-size: 0.75rem;
-    color: #555;
-    letter-spacing: 0.05em;
-}
-
-/* --- Animations --- */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* --- Mobile Responsiveness (Mobile First & Adaptive) --- */
-@media (max-width: 1024px) {
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    .featured-products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem 1.5rem;
-    }
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    .section {
-        padding: 8rem 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-menu { display: none; }
-    .mobile-menu-btn { display: block; font-size: 1.5rem; }
-    
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .featured-products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1rem;
-    }
-    .insta-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    
-    .hero { height: 50vh; }
-    .hero-title { font-size: 2.2rem; margin-bottom: 1rem; }
-    .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; padding: 0 10%; }
-    .btn { padding: 0.9rem 2.2rem; font-size: 0.75rem; }
-    
-    .section { padding: 6rem 0; }
-    .section-title { margin-bottom: 3rem; }
-    .section-title h2 { font-size: 1.8rem; }
-    .centered-title p { font-size: 0.9rem; margin-top: 1rem; }
-    
-    .whatsapp-card { padding: 4rem 1.5rem; }
-    .whatsapp-card h2 { font-size: 1.6rem; }
-    .whatsapp-card p { font-size: 0.95rem; margin-bottom: 2rem; }
-    
-    .footer { padding: 4rem 0 2rem; }
-    .footer-content { flex-direction: column; gap: 2.5rem; }
-}
-
-@media (max-width: 480px) {
-    .featured-products-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    .insta-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .hero { height: 45vh; }
-    .hero-title { font-size: 1.8rem; }
-    .section { padding: 5rem 0; }
+/* --- Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
 }

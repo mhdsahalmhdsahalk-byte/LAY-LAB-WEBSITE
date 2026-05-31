@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Nav
+    // 1. Preloader Handler
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        document.body.classList.add('preloader-active');
+    }
+    
+    window.addEventListener('load', () => {
+        if (preloader) {
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('preloader-active');
+        }
+    });
+
+    // Fallback if load event takes too long
+    setTimeout(() => {
+        if (preloader && !preloader.classList.contains('opacity-0')) {
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('preloader-active');
+        }
+    }, 2000);
+
+    // 2. Mobile Nav Trigger
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
     const mobileNav = document.getElementById('mobileNav');
@@ -8,46 +29,58 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn && mobileNav) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-hidden');
         });
     }
     if (closeMenuBtn && mobileNav) {
         closeMenuBtn.addEventListener('click', () => {
             mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('overflow-hidden');
         });
     }
     mobileLinks.forEach(link => link.addEventListener('click', () => {
         if(mobileNav) mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.classList.remove('overflow-hidden');
     }));
+
+    // 3. Navbar scroll listener
+    const header = document.querySelector('header.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
     const WA_NUMBER = "919037010474";
 
-
-
-    // 3. Create Apple-Style Product Card
+    // 4. Create Apple-Style Product Card (Uniform size and styling)
     function createProductCard(product) {
         const card = document.createElement('div');
-        card.className = 'product-card fade-in';
+        card.className = 'product-card group bg-darkcard border border-white/5 hover:border-gold/20 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.04)] flex flex-col justify-between';
         
-        const message = `Hello LayLab, I am interested in exploring/ordering: *${product.name}* (${product.price})\n[ID: ${product.id}]`;
+        const message = `Hello LayLab, I would like to order the product: *${product.name}* (${product.price})\n[ID: ${product.id}]`;
         const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
         card.innerHTML = `
-            <div class="product-image-container">
-                <img src="${product.image}" loading="lazy" alt="${product.name}">
+            <div>
+                <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-neutral-950 border border-white/5 mb-6 relative">
+                    <img src="${product.image}" loading="lazy" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="text-left">
+                    <h3 class="font-cinzel text-white text-base font-light tracking-wide mb-1">${product.name}</h3>
+                    <span class="font-outfit text-sm text-gold tracking-wide font-normal">${product.price}</span>
+                </div>
             </div>
-            <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
-                <span class="product-price">${product.price}</span>
-                <a href="${waLink}" target="_blank" class="btn-add-to-cart">Add to Cart</a>
-            </div>
+            <a href="${waLink}" target="_blank" class="mt-6 w-full text-center bg-white border border-white text-black font-outfit text-xs font-semibold py-3.5 uppercase tracking-wider rounded-full hover:bg-transparent hover:text-white transition-all duration-500 block">
+                Order on WhatsApp
+            </a>
         `;
         return card;
     }
 
-    // 4. Render Featured Products
+    // 5. Render Featured Products
     function renderFeaturedProducts() {
         const featuredProductsGrid = document.getElementById('featuredProductsGrid');
         if (!featuredProductsGrid) return;
@@ -59,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderFeaturedProducts();
 
-    // 5. Fade-in observers
+    // 6. Fade-in observers
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
