@@ -17,10 +17,10 @@
             <nav>
                 <div class="nav-menu">
                     <a href="#hero">Home</a>
-                    <a href="#categories">Categories</a>
-                    <a href="#all-products">Collection</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#why-laylab">Why Laylab</a>
+                    <a href="#featured-products">Products</a>
+                    <a href="#instagram-preview">Instagram</a>
+                    <a href="#whatsapp-cta">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">☰</button>
             </nav>
@@ -32,10 +32,10 @@
         <button class="close-menu-btn">×</button>
         <div class="mobile-links">
             <a href="#hero" class="mobile-link">Home</a>
-            <a href="#categories" class="mobile-link">Categories</a>
-            <a href="#all-products" class="mobile-link">Collection</a>
-            <a href="#gallery" class="mobile-link">Gallery</a>
-            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="#why-laylab" class="mobile-link">Why Laylab</a>
+            <a href="#featured-products" class="mobile-link">Products</a>
+            <a href="#instagram-preview" class="mobile-link">Instagram</a>
+            <a href="#whatsapp-cta" class="mobile-link">Contact</a>
         </div>
     </div>
 
@@ -45,6 +45,14 @@
             <div class="slide active" style="background-image: url('assets/banner1.png');"></div>
             <div class="slide" style="background-image: url('assets/banner2.png');"></div>
             <div class="slide" style="background-image: url('assets/banner3.png');"></div>
+        </div>
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-content-overlay">
+            <div class="container">
+                <h1 class="hero-title">ELEGANCE IN DETAIL</h1>
+                <p class="hero-subtitle">Bespoke premium home decor curated to elevate your living spaces.</p>
+                <a href="#featured-products" class="btn btn-hero">Explore Curation</a>
+            </div>
         </div>
         <div class="slider-controls">
             <button class="slider-btn prev-btn">❮</button>
@@ -57,61 +65,108 @@
         </div>
     </section>
 
-    <!-- 3. Categories (Minimal) -->
-    <section id="categories" class="section bg-light fade-in">
+    <!-- 3. Why Laylab Section -->
+    <section id="why-laylab" class="section bg-light fade-in">
         <div class="container">
             <div class="section-title centered-title">
-                <h2>Curation</h2>
-                <p>Select a category to filter our bespoke collection.</p>
+                <h2>Why Laylab</h2>
+                <p>Designed for those who appreciate the details. We curate premium home decor items that bring balance, textures, and bespoke artistry into your space.</p>
             </div>
-            <div id="categoryGrid" class="category-grid">
-                <!-- Injected via script.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Main Collection -->
-    <section id="all-products" class="section fade-in">
-        <div class="container">
-            <div class="section-title">
-                <div>
-                    <h2>The Collection</h2>
-                    <p>Browse our premier pieces. Inquire to easily design your space.</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-num">01</div>
+                    <h3>Artisanal Integrity</h3>
+                    <p>Every piece in our collection is hand-selected, prioritizing high-quality materials, rich textures, and exceptional craftsmanship.</p>
                 </div>
-                <a href="#all-products" class="view-all reset-filter" style="cursor: pointer;">View All</a>
-            </div>
-            <div id="allProductsGrid" class="product-grid masonry">
-                <!-- Injected via script.js -->
+                <div class="why-card">
+                    <div class="why-num">02</div>
+                    <h3>Bespoke Curation</h3>
+                    <p>We source items tailored to your specific design preferences, helping you build a cohesive visual narrative across your home.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-num">03</div>
+                    <h3>Concierge Consultation</h3>
+                    <p>Connect with our consultants directly via WhatsApp to discuss customized sizes, framing options, and matching decor sets.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Gallery (Lifestyle & Projects) -->
-    <section id="gallery" class="section bg-light fade-in">
+    <!-- 4. Featured Products Section -->
+    <section id="featured-products" class="section fade-in">
         <div class="container">
             <div class="section-title centered-title">
-                <h2>Gallery</h2>
-                <p>Our pieces installed in beautiful spaces.</p>
+                <h2>Featured Products</h2>
+                <p>A curated selection of our finest decor items. Click any piece to inquire about custom styling.</p>
             </div>
-            <div class="gallery-grid">
-                <img src="assets/projects/04ECE8C1-F334-425A-B19B-153000DDE744.JPG" alt="Project Installation 1">
-                <img src="assets/projects/06957278-19E0-4498-93E7-3F7E80E9AE20.JPG" alt="Project Installation 2">
-                <img src="assets/projects/2D76DF19-FEDC-4849-9405-C3BB30CDCF5D.JPG" alt="Project Installation 3">
-                <img src="assets/projects/3F15ACE9-AB1F-4176-927B-CAE031CB6C74.JPG" alt="Project Installation 4">
-                <img src="assets/projects/981C32F2-CD93-4672-B900-71CE72382B83.JPG" alt="Project Installation 5">
-                <img src="assets/projects/A06F3A79-80AC-4FCE-A182-AA67F72811B7.JPG" alt="Project Installation 6">
+            <div id="featuredProductsGrid" class="featured-products-grid">
+                <!-- Injected dynamically via script.js -->
             </div>
         </div>
     </section>
 
-    <!-- 6. Contact Section (Direct WhatsApp Connect) -->
-    <section id="contact" class="section fade-in">
-        <div class="container contact-container" style="text-align: center; margin: 0 auto;">
+    <!-- 5. Instagram Preview Section -->
+    <section id="instagram-preview" class="section bg-light fade-in">
+        <div class="container">
             <div class="section-title centered-title">
-                <h2>Acquire a Piece</h2>
-                <p>We work closely with our clients to design the perfect space. Reach out on WhatsApp to discuss pieces, sizing, and custom installations.</p>
+                <h2>Instagram Preview</h2>
+                <p>Witness our pieces styled in living spaces. Follow us on Instagram for daily inspiration.</p>
             </div>
-            <a href="https://wa.me/919037010474?text=Hello%20LayLab,%20I%20am%20interested%20in%20your%20pieces." target="_blank" class="btn btn-whatsapp" style="margin-top: 2rem;">Message on WhatsApp</a>
+            <div class="insta-grid">
+                <div class="insta-item">
+                    <img src="assets/projects/04ECE8C1-F334-425A-B19B-153000DDE744.JPG" alt="Styled Space 1">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/projects/06957278-19E0-4498-93E7-3F7E80E9AE20.JPG" alt="Styled Space 2">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/projects/2D76DF19-FEDC-4849-9405-C3BB30CDCF5D.JPG" alt="Styled Space 3">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/projects/3F15ACE9-AB1F-4176-927B-CAE031CB6C74.JPG" alt="Styled Space 4">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/projects/981C32F2-CD93-4672-B900-71CE72382B83.JPG" alt="Styled Space 5">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="assets/projects/A06F3A79-80AC-4FCE-A182-AA67F72811B7.JPG" alt="Styled Space 6">
+                    <div class="insta-overlay">
+                        <span class="insta-icon">📷</span>
+                        <span class="insta-text">View Post</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WhatsApp CTA Section -->
+    <section id="whatsapp-cta" class="section fade-in">
+        <div class="container whatsapp-container" style="text-align: center; margin: 0 auto;">
+            <div class="whatsapp-card">
+                <h2>COMMISSION A PIECE</h2>
+                <p>Collaborate directly with our design concierge to source custom sizes, colors, and framed sets. Let's make your space unforgettable.</p>
+                <a href="https://wa.me/919037010474?text=Hello%20LayLab,%20I%20am%20interested%20in%20commissioning%20a%20custom%20piece." target="_blank" class="btn btn-whatsapp-cta" style="margin-top: 2rem;">Consult on WhatsApp</a>
+            </div>
         </div>
     </section>
 
@@ -122,6 +177,12 @@
                 <div class="footer-brand">
                     <h3>LAY LAB.</h3>
                     <p>Minimal. Premium. Bespoke.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#why-laylab">Why Laylab</a>
+                    <a href="#featured-products">Featured Products</a>
+                    <a href="physics.html">Interactive Physics</a>
                 </div>
                 <div class="footer-socials">
                     <a href="https://wa.me/919037010474?text=" target="_blank">WhatsApp</a>

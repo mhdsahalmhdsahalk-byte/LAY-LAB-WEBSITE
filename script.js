@@ -22,19 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }));
 
-    // 2. Data Categories
-    const categoriesList = [
-        { name: "Frames", subcats: ["Wall Frames", "Calligraphy Frames", "Arabic Calligraphy", "Texture Frames"], image: "assets/categories/minimal Wall Frames.png" },
-        { name: "Artificial Plants", subcats: ["Artificial Flowers", "Artificial Leafs", "Potted Plants"], image: "assets/categories/flowor and leaf.png" },
-        { name: "Wall Decor", subcats: ["Metal Arts", "Resin Arts", "Wall Clocks", "Wall Furnitures"], image: "assets/categories/Metal Arts.png" },
-        { name: "Vases", subcats: ["Ceramic Vases", "Glass Vases"], image: "assets/categories/ceramic_vase.png" },
-        { name: "Table & Living Decor", subcats: ["Table Mats", "Under Table Rugs", "Soap Dispensers", "Crockery Decor Sets"], image: "assets/categories/Table Mate.png" },
-        { name: "Mirrors", subcats: ["Customised Mirrors"], image: "assets/categories/Customised Mirrors.png" }
-    ];
-
     const WA_NUMBER = "919037010474";
 
-    // 3. Hero Slider Logic
+    // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
@@ -65,82 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
         resetInterval();
     }
 
-    // 4. Create Minimal Product Card
+    // 3. Create Apple-Style Product Card
     function createProductCard(product) {
         const card = document.createElement('div');
         card.className = 'product-card fade-in';
         
-        const message = `Hello LayLab, I am interested in exploring: *${product.name}*\n[ID: ${product.id}]`;
+        const message = `Hello LayLab, I am interested in exploring/ordering: *${product.name}* (${product.price})\n[ID: ${product.id}]`;
         const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
         card.innerHTML = `
-            <a href="${waLink}" target="_blank" class="product-image-container">
+            <div class="product-image-container">
                 <img src="${product.image}" loading="lazy" alt="${product.name}">
-                <div class="hover-overlay"><span class="inquire-text">Inquire</span></div>
-            </a>
+            </div>
             <div class="product-info">
-                <div class="product-name">${product.name}</div>
+                <h3 class="product-name">${product.name}</h3>
+                <span class="product-price">${product.price}</span>
+                <a href="${waLink}" target="_blank" class="btn-add-to-cart">Add to Cart</a>
             </div>
         `;
         return card;
     }
 
-    // 5. Render Categories
-    function renderCategories() {
-        const categoryGrid = document.getElementById('categoryGrid');
-        if (!categoryGrid) return;
-        categoriesList.forEach(cat => {
-            const card = document.createElement('a');
-            card.href = "#all-products"; 
-            card.className = 'category-card';
-            
-            const subcatText = cat.subcats.join(', ');
-            
-            card.innerHTML = `
-                <div class="category-icon" style="background: #121212; border: 1px solid var(--color-border);">
-                    ${cat.image ? `<img src="${cat.image}" alt="${cat.name}">` : `<span style="font-size:1.5rem; color:#AAA; font-weight:200;">[ Image ]</span>`}
-                </div>
-                <h3>${cat.name}</h3>
-                <p class="subcat-text">${subcatText}</p>
-            `;
-            card.addEventListener('click', () => renderFilteredProducts(cat.name));
-            categoryGrid.appendChild(card);
+    // 4. Render Featured Products
+    function renderFeaturedProducts() {
+        const featuredProductsGrid = document.getElementById('featuredProductsGrid');
+        if (!featuredProductsGrid) return;
+        featuredProductsGrid.innerHTML = '';
+        products.forEach(prod => {
+            featuredProductsGrid.appendChild(createProductCard(prod));
         });
     }
 
-    // 6. Render Products (Filtered)
-    function renderFilteredProducts(categoryName) {
-        const allProductsGrid = document.getElementById('allProductsGrid');
-        const sectionTitle = document.querySelector('#all-products .section-title h2');
-        const sectionDesc = document.querySelector('#all-products .section-title p');
-        
-        if (!allProductsGrid) return;
-        allProductsGrid.innerHTML = ''; 
-        
-        let filtered = products;
-        if (categoryName) {
-            filtered = products.filter(p => p.category === categoryName);
-            if(sectionTitle) sectionTitle.textContent = categoryName;
-            if(sectionDesc) sectionDesc.textContent = `Showing beautiful pieces in ${categoryName}.`;
-        } else {
-            if(sectionTitle) sectionTitle.textContent = "The Collection";
-            if(sectionDesc) sectionDesc.textContent = "Browse our premier pieces. Inquire to purchase.";
-        }
+    renderFeaturedProducts();
 
-        filtered.forEach(prod => {
-            allProductsGrid.appendChild(createProductCard(prod));
-        });
-    }
-
-    const resetLinks = document.querySelectorAll('.reset-filter, .nav-menu a[href="#all-products"]');
-    resetLinks.forEach(link => {
-        link.addEventListener('click', () => renderFilteredProducts(null));
-    });
-
-    renderCategories();
-    renderFilteredProducts(null);
-
-    // Fade-in observers
+    // 5. Fade-in observers
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
