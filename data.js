@@ -15,10 +15,10 @@ const products = [
     },
     {
         id: "LL003",
-        name: "Dutch Cabbage",
+        name: "Wicker Planters",
         category: "Artificial Plants",
         price: "₹7,800",
-        image: "assets/images/Dutch_Cabbage.png"
+        image: "assets/categories/IMG_4806.PNG"
     },
     {
         id: "LL004",
