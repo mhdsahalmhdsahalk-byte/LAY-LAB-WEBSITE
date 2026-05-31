@@ -39,6 +39,6 @@ const products = [
         name: "Nordic Texture Frame",
         category: "Frames",
         price: "₹11,000",
-        image: "assets/categories/minimal Wall Frames.png"
+        image: "assets/categories/IMG_4842.PNG"
     }
 ];
