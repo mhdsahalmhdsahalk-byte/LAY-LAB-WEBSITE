@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Data Categories
     const categoriesList = [
-        { name: "Frames", subcats: ["Wall Frames", "Calligraphy Frames", "Arabic Calligraphy", "Texture Frames"], image: "" },
-        { name: "Artificial Plants", subcats: ["Artificial Flowers", "Artificial Leafs", "Potted Plants"], image: "" },
-        { name: "Wall Decor", subcats: ["Metal Arts", "Resin Arts", "Wall Clocks", "Wall Furnitures"], image: "" },
-        { name: "Vases", subcats: ["Ceramic Vases", "Glass Vases"], image: "" },
-        { name: "Table & Living Decor", subcats: ["Table Mats", "Under Table Rugs", "Soap Dispensers", "Crockery Decor Sets"], image: "" },
-        { name: "Mirrors", subcats: ["Customised Mirrors"], image: "" }
+        { name: "Frames", subcats: ["Wall Frames", "Calligraphy Frames", "Arabic Calligraphy", "Texture Frames"], image: "assets/categories/minimal Wall Frames.png" },
+        { name: "Artificial Plants", subcats: ["Artificial Flowers", "Artificial Leafs", "Potted Plants"], image: "assets/categories/flowor and leaf.png" },
+        { name: "Wall Decor", subcats: ["Metal Arts", "Resin Arts", "Wall Clocks", "Wall Furnitures"], image: "assets/categories/Metal Arts.png" },
+        { name: "Vases", subcats: ["Ceramic Vases", "Glass Vases"], image: "assets/categories/ceramic_vase.png" },
+        { name: "Table & Living Decor", subcats: ["Table Mats", "Under Table Rugs", "Soap Dispensers", "Crockery Decor Sets"], image: "assets/categories/Table Mate.png" },
+        { name: "Mirrors", subcats: ["Customised Mirrors"], image: "assets/categories/Customised Mirrors.png" }
     ];
 
     const WA_NUMBER = "919037010474";
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const subcatText = cat.subcats.join(', ');
             
             card.innerHTML = `
-                <div class="category-icon" style="background: #EFEFEF; border: 1px dashed #DDD;">
+                <div class="category-icon" style="background: #121212; border: 1px solid var(--color-border);">
                     ${cat.image ? `<img src="${cat.image}" alt="${cat.name}">` : `<span style="font-size:1.5rem; color:#AAA; font-weight:200;">[ Image ]</span>`}
                 </div>
                 <h3>${cat.name}</h3>

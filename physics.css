@@ -3,8 +3,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F9F8F6; /* Soft beige base */
-    color: #1a1a1a;
+    background-color: #000000; /* Pure black background */
+    color: #FFFFFF;
     width: 100vw;
     height: 100vh;
     overflow: hidden; /* Hide scrollbars, bounds handled by physics */
@@ -21,9 +21,9 @@ body {
     z-index: 0;
     pointer-events: none;
 }
-.blob-1 { width: 600px; height: 600px; background: rgba(226, 220, 200, 0.6); top: -100px; left: -100px; }
-.blob-2 { width: 500px; height: 500px; background: rgba(255, 255, 255, 0.9); bottom: 10%; right: 10%; }
-.blob-3 { width: 400px; height: 400px; background: rgba(200, 210, 226, 0.4); top: 30%; right: -50px; }
+.blob-1 { width: 600px; height: 600px; background: rgba(212, 175, 55, 0.05); top: -100px; left: -100px; }
+.blob-2 { width: 500px; height: 500px; background: rgba(255, 255, 255, 0.02); bottom: 10%; right: 10%; }
+.blob-3 { width: 400px; height: 400px; background: rgba(138, 43, 226, 0.04); top: 30%; right: -50px; }
 
 /* Subtle on-screen instruction */
 .instruction {
@@ -34,7 +34,7 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.05em;
-    color: #666;
+    color: #8E8E93;
     z-index: 5;
     pointer-events: none;
     opacity: 0.6;
@@ -57,12 +57,12 @@ body {
     top: 0;
     left: 0;
     transform-origin: center center;
-    /* Apple-style Glassmorphism */
-    background: rgba(255, 255, 255, 0.35);
+    /* Apple-style Glassmorphism Dark Mode */
+    background: rgba(20, 20, 20, 0.5);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,8 +74,8 @@ body {
 /* Active Drag State */
 .physics-el:active {
     cursor: grabbing;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+    background: rgba(40, 40, 40, 0.6);
 }
 
 /* Typography Bodies */
@@ -85,7 +85,7 @@ body {
     font-weight: 300;
     border-radius: 100px;
     letter-spacing: -0.05em;
-    color: #1a1a1a;
+    color: #FFFFFF;
     white-space: nowrap;
 }
 
@@ -95,7 +95,7 @@ body {
     font-weight: 600;
     border-radius: 50px;
     letter-spacing: 0.1em;
-    color: #1a1a1a;
+    color: #FFFFFF;
 }
 
 .pill {
@@ -103,13 +103,13 @@ body {
     font-size: 1rem;
     font-weight: 500;
     border-radius: 40px;
-    background: #1a1a1a;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background: #FFFFFF;
+    color: black;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.05);
     border: none;
     text-decoration: none;
 }
-.pill:hover { background: #333; }
+.pill:hover { background: #E5E5EA; }
 
 /* Image Cards */
 .card {
@@ -143,7 +143,7 @@ body {
     justify-content: center;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #333;
+    color: #FFFFFF;
 }
 
 /* Decorative Geometric Shape */
@@ -151,7 +151,8 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: rgba(226, 220, 200, 0.8);
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.4);
     backdrop-filter: blur(4px);
 }
 
